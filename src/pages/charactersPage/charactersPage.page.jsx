@@ -1,5 +1,5 @@
 import React from 'react';
-import CharactersDirectory from '../../components/characters-directory/characters-directory.componentjsx';
+import CharactersDirectory from '../../components/characters-directory/characters-directory.component.jsx';
 
 
 const CharactersPage = () => (

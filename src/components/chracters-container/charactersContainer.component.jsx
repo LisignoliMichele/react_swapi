@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './charactersContainer.stylesheet.scss'
+
 import { CharacterCard } from '../character-card/characterCard.component';
 
 const CharacterContainer = props => {

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './characterCard.stylesheet.scss'
 
 export const CharacterCard = (props) => (
    <div className="card-container">
