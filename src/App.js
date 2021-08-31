@@ -1,8 +1,11 @@
 import React from 'react';
 
+import CharactersPage from './pages/charactersPage/charactersPage.page.jsx';
+
 function App() {
   return (
-    <div className="App">
+    <div>
+    <CharactersPage />
     </div>
   );
 }
