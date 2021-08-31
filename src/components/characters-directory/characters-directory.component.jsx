@@ -2,6 +2,8 @@ import React from 'react';
 
 import CharacterContainer from '../chracters-container/charactersContainer.component';
 
+import { Search } from '../search/search.component';
+
 class CharactersDirectory extends React.Component{
 
    constructor() {
@@ -9,6 +11,7 @@ class CharactersDirectory extends React.Component{
  
      this.state = {
        characters: [],
+       search: '',
      };
    }
  
@@ -19,12 +22,25 @@ class CharactersDirectory extends React.Component{
      .then(response => this.setState({characters: response}))
    }
  
+
+   handelChange = event => {
+    this.setState({ search: event.target.value });
+    };
+
    render() {
 
-     const {characters} = this.state;
+    const { characters, search } = this.state;
+    const filtredCharacters = characters.filter(character =>
+      character.name.toLowerCase().includes(search.toLowerCase())
+    );
+
+    //  const {characters} = this.state;
      
      return (
-         <CharacterContainer characters = {characters} />
+       <div>
+         <Search placeholder='Find characters' handleChange={this.handelChange}/>
+         <CharacterContainer characters = {filtredCharacters} />
+         </div>
      );
    }
  }
