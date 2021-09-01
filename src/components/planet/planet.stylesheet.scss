@@ -1,14 +1,27 @@
 .planet{
-   width: 600px;
-   height: 600px;
-   border-radius: 50%;
    position: fixed;
    transform: translate(-50%, -50%);
    top: 50%;
    left: 50%; 
-   background-color: aqua;
+   background-color: #000;
+   animation-name: popUp;
+   animation-duration: 1s;
+   animation-timing-function: linear;  
+   border-radius: 20px;
+   overflow: hidden;
+   @keyframes popUp {
+      0%{
+         top: 120%;;
+      }
+      100%{
+         top: 50%;
+      }
+   }
    p{
       font-size: 30px;
       color: red;
    }
+}
+.hidden{
+   display: none;
 }

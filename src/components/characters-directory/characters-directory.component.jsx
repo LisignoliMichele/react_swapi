@@ -39,7 +39,7 @@ class CharactersDirectory extends React.Component{
     fetchData()
   }
 
-  handleChange = () => {
+  handleClose = () => {
     const currentState = this.state.active;
     this.setState({ active: !currentState })
   }
@@ -56,7 +56,7 @@ class CharactersDirectory extends React.Component{
        <div>
          <Search placeholder='Find characters' handleChange={this.handleChange}/>
          <CharacterContainer getThePlanet={this.handleClick} characters = {filtredCharacters} />
-         <Planet handleClose={this.handleChange} planet = {planet} active = {active}/>
+         <Planet handleClose={this.handleClose} planet = {planet} active = {active}/>
          </div>
      );
    }

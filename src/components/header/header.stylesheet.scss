@@ -1,0 +1,27 @@
+.header {
+   height: 70px;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   background-color: #fff;
+   margin-bottom: 25px;
+ 
+   .options {
+     width: 50%;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     
+ 
+     .option {
+       padding: 10px 15px;
+       text-decoration: none;
+       color: #000;
+       &:hover{
+         text-decoration: underline;
+       }
+     }
+   }
+ }
+ 
