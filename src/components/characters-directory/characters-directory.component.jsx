@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CharacterContainer from '../chracters-container/charactersContainer.component';
+import Planet from '../planet/planet.component';
 
 import { Search } from '../search/search.component';
 
@@ -11,35 +12,51 @@ class CharactersDirectory extends React.Component{
  
      this.state = {
        characters: [],
+       planet: [],
        search: '',
+       active: false,
      };
    }
- 
- 
+   
    componentDidMount() {
-     fetch('http://localhost:8000/api/people')
+     fetch("https://swapi.dev/api/people")
      .then(response => response.json())
-     .then(response => this.setState({characters: response}))
+     .then(response => this.setState({characters: response.results}))
    }
- 
 
-   handelChange = event => {
-    this.setState({ search: event.target.value });
-    };
+  handleChange = event => {
+  this.setState({ search: event.target.value });
+  };
+
+  handleClick = event => {
+    const fetchData = async () => {
+    const response = await fetch(event.target.value);
+    const data = await response.json();
+    this.setState({planet: data});
+    const currentState = this.state.active;
+    this.setState({ active: !currentState })
+    }
+    fetchData()
+  }
+
+  handleChange = () => {
+    const currentState = this.state.active;
+    this.setState({ active: !currentState })
+  }
+
 
    render() {
 
-    const { characters, search } = this.state;
+    const { characters, search, planet, active } = this.state;
     const filtredCharacters = characters.filter(character =>
       character.name.toLowerCase().includes(search.toLowerCase())
     );
 
-    //  const {characters} = this.state;
-     
      return (
        <div>
-         <Search placeholder='Find characters' handleChange={this.handelChange}/>
-         <CharacterContainer characters = {filtredCharacters} />
+         <Search placeholder='Find characters' handleChange={this.handleChange}/>
+         <CharacterContainer getThePlanet={this.handleClick} characters = {filtredCharacters} />
+         <Planet handleClose={this.handleChange} planet = {planet} active = {active}/>
          </div>
      );
    }

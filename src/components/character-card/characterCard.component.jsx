@@ -4,6 +4,7 @@ import './characterCard.stylesheet.scss'
 
 export const CharacterCard = (props) => (
    <div className="card-container">
+      
        <h2>{props.character.name}</h2>
        <ul>
           <li>height: {props.character.height}</li>
@@ -11,6 +12,6 @@ export const CharacterCard = (props) => (
           <li>created: <small>{props.character.created}</small></li>
           <li>updated:<small>{props.character.edited}</small></li>
        </ul>
-       <div onClick={() => console.log('ciao')}>PLANET</div>
+       <button onClick={props.getThePlanet} value={props.character.homeworld}/>
    </div>
 )
