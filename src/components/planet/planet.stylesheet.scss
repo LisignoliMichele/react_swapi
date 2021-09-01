@@ -9,6 +9,7 @@
    animation-timing-function: linear;  
    border-radius: 20px;
    overflow: hidden;
+   text-align: center;
    @keyframes popUp {
       0%{
          top: 120%;;
@@ -18,8 +19,11 @@
       }
    }
    p{
-      font-size: 30px;
-      color: red;
+      font-size: 15px;
+      color: cyan;
+      span{
+         font-size: 20px;
+      }
    }
 }
 .hidden{

@@ -6,10 +6,10 @@ import planet from './img/world2.gif';
 const Planet = props => {
    return <div onClick={props.handleClose} className={props.active ? 'planet': 'hidden'} >
             <img src={planet}/>
-            <p>name: {props.planet.name}</p>
-            <p>Planet Diameter: {props.planet.diameter}</p>
-            <p>Planet climate: {props.planet.climate}</p>
-            <p>Planet population: {props.planet.population}</p>
+            <p>name: <br/><span>{props.planet.name}</span></p>
+            <p>Planet Diameter: <br/><span>{props.planet.diameter}</span></p>
+            <p>Planet climate: <br/><span>{props.planet.climate}</span></p>
+            <p>Planet population: <br/><span>{props.planet.population}</span></p>
          </div>
 }
    

@@ -2,8 +2,9 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import BackgroundVideo from './components/bg-video/bg-video.component';
-import Header from './components/header/header.component';
+import './App.css'
 
+import Header from './components/header/header.component';
 import CharactersPage from './pages/charactersPage/charactersPage.page.jsx';
 import HomePage from './pages/homePage/homePage.page.jsx';
 

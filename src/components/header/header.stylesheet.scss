@@ -1,9 +1,9 @@
 .header {
-   height: 70px;
+   height: 80px;
    width: 100%;
    display: flex;
    justify-content: space-between;
-   background-color: #fff;
+   background-color: rgba($color: #ffff, $alpha: 0.8);
    margin-bottom: 25px;
  
    .options {
